@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            transition: ease-in-out 2s;
+            font-family: 'Arial', sans-serif;
+            font-size: small;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+        }
+        body {
+            overflow: hidden;
+        }
+        #main-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        #the-div-of-main-picture {
+            width: 300px;
+            height: 300px;
+        }
+        #main-picture {
+            width: 100%;
+            height: 100%;
+        }
+        #the-counter {
+            width: 100px;
+            height: 40px;
+            margin: 0 auto;
+            text-align: center;
+            position: absolute;
+            top: 0;
+        }
+        #the-counter span {
+            font-size: x-large;
+            display: block;
+            margin-bottom: 10px;
+        }
+        #floater-button {
+            position: fixed;
+            z-index: 999;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background: #333;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #floater-container {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            transition: right 0.3s ease;
+            overflow: hidden;
+            z-index: 1000;
+        }
+        #floater-container.active {
+            right: 0;
+            overflow: scroll;
+        }
+        #floater-container .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background: red;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        #floater-container .close-btn:hover {
+            background: darkred;
+        }
+        #floater-container .content {
+            padding: 50px;
+        }
+        .content-inside {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .content-inside > img {
+            width: 100%;
+            height: 175px;
+        }
+        .content-inside > span {
+            margin-top: 4px;
+        }
+        .content-inside > span:nth-last-child() {
+            margin-bottom: 4px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 900;
+        }
+        .overlay.active {
+            display: block;
+        }
+        .level-counter {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 25px;
+            height: 25px;
+            background-color: #FFDB58;
+            color: black;
+            font-size: small;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+            font-size: small;
+            font-family: 'Arial', sans-serif;
+        }
+        .footer-banner {
+            font-size: 14px;
+            color: #333;
+        }
+        .footer-banner a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .footer-banner a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="floater-button">☰</div>
+    <div id="floater-container">
+        <div class="close-btn">×</div>
+        <div class="content">
+            <div class="content-inside" id="click_power_div">
+                <div class="level-counter">5</div>
+                <img src="media/this_is_a_important_image.jpg" alt="image">
+                <span id="click_power">Tıklama Gücü</span> <br>
+                <span class="ability_price">Yetenek Bedeli :</span>
+            </div>
+            <div class="content-inside" id="auto_clicker_div">
+                <div class="level-counter">3</div>
+                <img src="media/this_is_a_important_image.jpg" alt="image">
+                <span id="auto_clicker">Otomatik Tıklayıcı</span> <br>
+                <span class="ability_price">Yetenek Bedeli :</span>
+            </div>
+            <div class="content-inside" id="click_per_seconds_div">
+                <div class="level-counter">7</div>
+                <img src="media/this_is_a_important_image.jpg" alt="image">
+                <span id="click_per_seconds">Saniye Başına Tıklama Sınırını Arttır</span> <br>
+                <span class="ability_price">Yetenek Bedeli :</span>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+    <div id="main-container">
+        <div id="the-counter">
+            <span id="thisisthenumber">1</span>
+        </div>
+        <div id="the-div-of-main-picture">
+            <img id="main-picture" src="media/this_is_a_important_image.jpg" onclick="hello()" alt="Main Picture">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-banner">
+            Maded by enaimami | <a href="https://www.instagram.com/enaimami/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="library/language/language-repo.js"></script>
+    <script src="library/howler.js-2.2.4/dist/howler.min.js"></script>
+    <script src="library/encryptor/encryptor.js"></script>
+    <script src="library/main.js"></script>
+</body>
+</html>
