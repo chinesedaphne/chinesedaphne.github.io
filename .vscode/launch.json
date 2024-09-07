@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Open in Firefox",
+            "command": "firefox ${file}",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+    ]
+}
