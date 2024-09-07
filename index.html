@@ -9,10 +9,10 @@
             padding: 0;
             margin: 0;
             transition: ease-in-out 2s;
-            font-family: 'Arial', sans-serif; /* Modern bir font */
-            font-size: small; /* Font boyutu ayarlandı */
+            font-family: 'Arial', sans-serif;
+            font-size: small;
             text-align: center;
-            line-height: 25px; /* Yüksekliğe uygun hale getirildi */
+            line-height: 25px;
             font-weight: bold;
         }
         body {
@@ -61,7 +61,6 @@
             cursor: pointer;
         }
         #floater-container {
-
             position: fixed;
             top: 0;
             right: -300px;
@@ -128,16 +127,39 @@
             position: absolute;
             top: 5px;
             left: 5px;
-            width: 25px; /* Boyut küçültüldü */
-            height: 25px; /* Boyut küçültüldü */
-            background-color: #FFDB58; /* Hardal sarısı rengi */
+            width: 25px;
+            height: 25px;
+            background-color: #FFDB58;
             color: black;
-            font-size: small; /* Font boyutu ayarlandı */
+            font-size: small;
             text-align: center;
-            line-height: 25px; /* Yüksekliğe uygun hale getirildi */
+            line-height: 25px;
             font-weight: bold;
-            border-radius: 5px; /* Hafif yuvarlatılmış köşeler */
-            font-family: 'Arial', sans-serif; /* Modern bir font */
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+            font-size: small;
+            font-family: 'Arial', sans-serif;
+        }
+        .footer-banner {
+            font-size: 14px;
+            color: #333;
+        }
+        .footer-banner a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .footer-banner a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -147,19 +169,19 @@
         <div class="close-btn">×</div>
         <div class="content">
             <div class="content-inside" id="click_power_div">
-                <div class="level-counter">5</div> <!-- Seviye sayacı -->
+                <div class="level-counter">5</div>
                 <img src="media/this_is_a_important_image.jpg" alt="image">
                 <span id="click_power">Tıklama Gücü</span> <br>
                 <span class="ability_price">Yetenek Bedeli :</span>
             </div>
             <div class="content-inside" id="auto_clicker_div">
-                <div class="level-counter">3</div> <!-- Seviye sayacı -->
+                <div class="level-counter">3</div>
                 <img src="media/this_is_a_important_image.jpg" alt="image">
                 <span id="auto_clicker">Otomatik Tıklayıcı</span> <br>
                 <span class="ability_price">Yetenek Bedeli :</span>
             </div>
             <div class="content-inside" id="click_per_seconds_div">
-                <div class="level-counter">7</div> <!-- Seviye sayacı -->
+                <div class="level-counter">7</div>
                 <img src="media/this_is_a_important_image.jpg" alt="image">
                 <span id="click_per_seconds">Saniye Başına Tıklama Sınırını Arttır</span> <br>
                 <span class="ability_price">Yetenek Bedeli :</span>
@@ -175,6 +197,12 @@
             <img id="main-picture" src="media/this_is_a_important_image.jpg" alt="Main Picture">
         </div>
     </div>
+
+    <footer>
+        <div class="footer-banner">
+            Maded by enaimami | <a href="https://www.instagram.com/enaimami/" target="_blank">Instagram</a>
+        </div>
+    </footer>
 
     <script src="library/language/language-repo.js"></script>
     <script src="library/howler.js-2.2.4/dist/howler.js"></script>
