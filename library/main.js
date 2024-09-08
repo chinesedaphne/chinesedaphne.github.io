@@ -78,7 +78,7 @@ main_get.addEventListener("click", function() {
 });
 function hello() {
     const sound = new Howl({
-        src: ['media/this_is_a_important_sound.ogg'],
+        src: ['media/this_is_a_important_sound.mp3'],
     });
 
     sound.on('loaderror', function() {
