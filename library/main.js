@@ -110,7 +110,7 @@ function updatetexts() {
     ability_price_html[1].innerText = texts.ability_price.replace("{dudes}", (parseInt(decrypt(localStorage.getItem("auto_clicker_level"))) * 300));
     ability_price_html[2].innerText = texts.ability_price.replace("{dudes}", (parseInt(decrypt(localStorage.getItem("click_per_seconds_level"))) * 100));
 
-    click_per_seconds.innerText = texts['ability1'];
+    click_power.innerText = texts['ability1'];
     auto_clicker.innerText = texts['ability2'];
     click_per_seconds.innerText = texts['ability3'];
 }
